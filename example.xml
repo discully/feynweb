@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<feynweb height="500px" width="600px" stylesheet="../feynweb/style_default.fws">
+
+	<input id="s1" type="dot" x="100" y="100">
+		<label position="w" r="20">e</label>
+	</input>
+	<input id="s2" type="dot" x="100" y="400" />
+	
+	<vertex id="n1" type="cross" x="200" y="250" />
+	<vertex id="n2" type="cross" x="350" y="250" />
+	
+	<nodegroup id="end" type="oval" x="500" y="250">
+		<output id="e1" type="none">
+			<label position="c">u</label>
+		</output>
+		<output id="e2" type="none">
+			<label position="c"><tspan text-decoration="overline">d</tspan></label>
+		</output>
+		<label position="e" r="50">&#960;<tspan font-size="50%" baseline-shift="super">+</tspan></label>
+	</nodegroup>
+	
+	<style line-color="red">
+		<fermion start="s1" end="n1" arrow="true">
+			<arrow />
+		</fermion>
+		<photon start="s2" end="n1" />
+	</style>
+	
+	<gluon start="n1" end="n2" />
+	
+	<boson start="n2" end="e1" />
+	<fermion start="n2" end="e2">
+		<arrow position="s" r="20" />
+	</fermion>
+	
+</feynweb>
